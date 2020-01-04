@@ -40,6 +40,16 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let bookDVC = segue.destination as? BookDVC,
+        let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("error")
+        }
+        
+        let book = books[indexPath.row]
+        bookDVC.detailBook = book
+    }
 }
 
 extension ViewController: UITableViewDataSource {

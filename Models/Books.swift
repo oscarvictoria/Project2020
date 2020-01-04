@@ -14,12 +14,14 @@ struct Books: Codable {
 
 struct Items: Codable {
     let volumeInfo: volumeInfo
+    let id: String
 }
 
 struct volumeInfo: Codable {
     let title: String?
     let authors: [String]?
     let imageLinks: ImageLinks?
+    let favoritedBy: String?
 }
 
 struct ImageLinks: Codable {

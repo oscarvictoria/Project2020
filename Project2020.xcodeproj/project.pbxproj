@@ -22,6 +22,8 @@
 		BE2D635A23BC0892005967CC /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D635923BC0892005967CC /* UIImageView + Extension.swift */; };
 		BE45D2EA23BFF2C5002256BB /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2E923BFF2C5002256BB /* CollectionViewController.swift */; };
 		BE45D2EC23BFF5EA002256BB /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */; };
+		BE45D2EE23C0595D002256BB /* Favorite Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2ED23C0595D002256BB /* Favorite Books.swift */; };
+		BE8AD58723C10E88002C28F3 /* BookDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58623C10E88002C28F3 /* BookDVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		BE2D635923BC0892005967CC /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		BE45D2E923BFF2C5002256BB /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		BE45D2ED23C0595D002256BB /* Favorite Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite Books.swift"; sourceTree = "<group>"; };
+		BE8AD58623C10E88002C28F3 /* BookDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				BE2D635323BBE024005967CC /* Books.swift */,
+				BE45D2ED23C0595D002256BB /* Favorite Books.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				BE2D635723BC05DF005967CC /* BookCell.swift */,
 				BE45D2E923BFF2C5002256BB /* CollectionViewController.swift */,
 				BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */,
+				BE8AD58623C10E88002C28F3 /* BookDVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 				BE2D635823BC05DF005967CC /* BookCell.swift in Sources */,
 				BE2D632B23BBD9D1005967CC /* AppDelegate.swift in Sources */,
 				BE2D632D23BBD9D1005967CC /* SceneDelegate.swift in Sources */,
+				BE45D2EE23C0595D002256BB /* Favorite Books.swift in Sources */,
 				BE45D2EC23BFF5EA002256BB /* CollectionCell.swift in Sources */,
 				BE2D635623BBE5BC005967CC /* BooksAPIClient.swift in Sources */,
+				BE8AD58723C10E88002C28F3 /* BookDVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

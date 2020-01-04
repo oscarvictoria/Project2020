@@ -62,6 +62,7 @@
                                             <outlet property="bookAuthorLabel" destination="7nM-XU-jcd" id="wzO-VH-E8Y"/>
                                             <outlet property="bookImageView" destination="CwL-B2-RWX" id="rnn-T3-J1k"/>
                                             <outlet property="bookTitleLabel" destination="aoq-EM-Q2T" id="kio-jE-orl"/>
+                                            <segue destination="EA3-hr-2Ne" kind="show" id="o3Z-B7-ueg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,6 +95,44 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="126.5625"/>
         </scene>
+        <!--BookDVC-->
+        <scene sceneID="gg0-cu-kH5">
+            <objects>
+                <viewController id="EA3-hr-2Ne" customClass="BookDVC" customModule="Project2020" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hjj-aO-9KE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3QH-QO-eyd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="435"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fi9-Rc-7MV">
+                                <rect key="frame" x="179.5" y="623" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Favorite"/>
+                                <connections>
+                                    <action selector="favorite:" destination="EA3-hr-2Ne" eventType="touchUpInside" id="h9S-eh-aeV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3QH-QO-eyd" firstAttribute="leading" secondItem="HFN-Ez-54Y" secondAttribute="leading" id="LMJ-2R-aEf"/>
+                            <constraint firstItem="3QH-QO-eyd" firstAttribute="height" secondItem="HFN-Ez-54Y" secondAttribute="height" multiplier="0.6" id="dfh-mt-T16"/>
+                            <constraint firstItem="3QH-QO-eyd" firstAttribute="trailing" secondItem="HFN-Ez-54Y" secondAttribute="trailing" id="jIB-OZ-A5s"/>
+                            <constraint firstItem="3QH-QO-eyd" firstAttribute="top" secondItem="HFN-Ez-54Y" secondAttribute="top" id="tzW-dF-yZy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HFN-Ez-54Y"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iRk-An-ffy"/>
+                    <connections>
+                        <outlet property="bookImageView" destination="3QH-QO-eyd" id="TzA-ae-d9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0w-eY-xDs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844.9275362318845" y="126.5625"/>
+        </scene>
         <!--Table View-->
         <scene sceneID="DX4-Zg-k5B">
             <objects>
@@ -125,41 +164,48 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vem-Uv-4LE">
-                                <rect key="frame" x="0.0" y="185" width="394" height="561"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Drd-ea-NUk">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ssv-I5-Zez">
-                                    <size key="itemSize" width="478" height="500"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qpw-Pt-9Bt">
+                                    <size key="itemSize" width="413" height="584"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="ObT-da-urd" customClass="CollectionCell" customModule="Project2020" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-7" width="385" height="575"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="mMk-PN-03H" customClass="CollectionCell" customModule="Project2020" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="42.5" width="413" height="584"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7ui-ic-ZgL">
-                                            <rect key="frame" x="0.0" y="0.0" width="385" height="575"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DH3-Mz-Osr">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="584"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-T1-UTw">
-                                                    <rect key="frame" x="8" y="20" width="369" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVc-7g-XWm">
+                                                    <rect key="frame" x="8" y="20" width="397" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIb-Bc-L5x">
-                                                    <rect key="frame" x="0.0" y="61" width="396" height="515"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-jz-cQz">
+                                                    <rect key="frame" x="8" y="60.5" width="397" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-j0-0MD">
+                                                    <rect key="frame" x="26" y="111" width="360" height="411"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="385" height="575"/>
+                                        <size key="customSize" width="413" height="584"/>
                                         <connections>
-                                            <outlet property="bookImage" destination="iIb-Bc-L5x" id="KsO-Sb-Qk1"/>
-                                            <outlet property="title" destination="0OT-T1-UTw" id="UUf-ci-U7e"/>
+                                            <outlet property="author" destination="jMd-jz-cQz" id="nvZ-kI-zQe"/>
+                                            <outlet property="bookImage" destination="h4b-j0-0MD" id="u0V-L6-S5o"/>
+                                            <outlet property="title" destination="tVc-7g-XWm" id="vfl-OE-qOM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -167,15 +213,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="1Yx-Bm-C01" firstAttribute="trailing" secondItem="Drd-ea-NUk" secondAttribute="trailing" id="Bzt-Nu-ss6"/>
                             <constraint firstItem="dVe-qn-vuu" firstAttribute="top" secondItem="1Yx-Bm-C01" secondAttribute="top" id="HG1-5H-6dx"/>
+                            <constraint firstItem="1Yx-Bm-C01" firstAttribute="bottom" secondItem="Drd-ea-NUk" secondAttribute="bottom" id="JiT-qx-eUf"/>
+                            <constraint firstItem="Drd-ea-NUk" firstAttribute="top" secondItem="dVe-qn-vuu" secondAttribute="bottom" id="NiT-7Z-HNN"/>
                             <constraint firstItem="dVe-qn-vuu" firstAttribute="leading" secondItem="1Yx-Bm-C01" secondAttribute="leading" id="W6O-op-S3R"/>
+                            <constraint firstItem="Drd-ea-NUk" firstAttribute="leading" secondItem="1Yx-Bm-C01" secondAttribute="leading" id="eIa-Z8-SWo"/>
                             <constraint firstItem="dVe-qn-vuu" firstAttribute="trailing" secondItem="1Yx-Bm-C01" secondAttribute="trailing" id="n81-Q3-NXT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Yx-Bm-C01"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oze-Xb-sze"/>
                     <connections>
-                        <outlet property="collectionView" destination="Vem-Uv-4LE" id="U8o-UH-c74"/>
+                        <outlet property="collectionView" destination="Drd-ea-NUk" id="WBP-vT-yo0"/>
                         <outlet property="searchBar" destination="dVe-qn-vuu" id="QB6-WQ-ae4"/>
                     </connections>
                 </viewController>

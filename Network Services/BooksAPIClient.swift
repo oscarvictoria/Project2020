@@ -13,7 +13,7 @@ struct BooksAPIClient {
     
     let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "book"
     
-    let endpointURLString = "https://www.googleapis.com/books/v1/volumes?q=\(searchQuery)&maxResults=5"
+    let endpointURLString = "https://www.googleapis.com/books/v1/volumes?q=\(searchQuery)&maxResults=15"
     
     
     guard let url = URL(string: endpointURLString) else {
@@ -39,4 +39,35 @@ struct BooksAPIClient {
     }
     
 }
+    
+    static func postFavorites(book: volumeInfo, completion: @escaping (Result <Bool, AppError>)-> ()) {
+        
+        let endpointURLString = "https://5e11123483440f0014d83035.mockapi.io/api/v1/favorites"
+        
+        guard let url = URL(string: endpointURLString) else {
+            completion(.failure(.badURL(endpointURLString)))
+            return
+        }
+        
+        do {
+            let data = try JSONEncoder().encode(book)
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = data
+            NetworkHelper.shared.performDataTask(with: request) { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("app error \(appError)")
+                case .success:
+                    completion(.success(true))
+                }
+            }
+        } catch {
+            completion(.failure(.encodingError(error)))
+        }
+
+        
+    }
 }
