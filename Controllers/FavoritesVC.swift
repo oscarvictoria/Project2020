@@ -12,6 +12,10 @@ class FavoritesVC: UIViewController {
 
 @IBOutlet weak var tableView: UITableView!
     
+    
+private var refreshControl: UIRefreshControl!
+    
+    
     var theBooks = [favoriteBooks]() {
         didSet {
             DispatchQueue.main.async {
@@ -24,10 +28,23 @@ class FavoritesVC: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         loadData()
+        configuredRefreshControl()
     }
     
+    func configuredRefreshControl() {
+        refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        
+        // programmable target action using objective-c runtime api
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    @objc
     func loadData() {
         BooksAPIClient.getFavorites { (result) in
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
             switch result {
             case .failure(let appError):
                 print("\(appError)")

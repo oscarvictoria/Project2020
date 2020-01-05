@@ -27,10 +27,10 @@ class BestSellersVC: UIViewController {
     }
     
     func loadList() {
-        BooksAPIClient.getList { (result) in
+        BooksAPIClient.getList(list: "science") { (result) in
             switch result {
-            case .failure(let appError):
-                print("\(appError)")
+            case .failure(let error):
+                print("\(error)")
             case .success(let list):
                 self.list = list
             }

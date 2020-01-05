@@ -252,13 +252,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uad-oT-yIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5300" y="676"/>
+            <point key="canvasLocation" x="-496" y="1695"/>
         </scene>
-        <!--Collection View-->
+        <!--Author-->
         <scene sceneID="aIl-D7-XoK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82k-TV-8hl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection View" id="fRl-hR-7qY"/>
+                    <tabBarItem key="tabBarItem" title="Author" id="fRl-hR-7qY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gpb-oN-9E0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -380,10 +380,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="2239.2857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Update ListVC-->
         <scene sceneID="gYJ-eQ-yuO">
             <objects>
-                <viewController id="1Z1-PM-fe6" sceneMemberID="viewController">
+                <viewController id="1Z1-PM-fe6" customClass="UpdateListVC" customModule="Project2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5TI-t5-4eb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -427,19 +427,30 @@
                         <viewLayoutGuide key="safeArea" id="n3t-MH-GAy"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Bn-og-CTh">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="5Rz-iJ-TAe"/>
-                        <barButtonItem key="rightBarButtonItem" title="Update" id="8Jm-vG-bqZ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="5Rz-iJ-TAe">
+                            <connections>
+                                <action selector="cancel:" destination="1Z1-PM-fe6" id="oUw-6p-Hzg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="8Jm-vG-bqZ">
+                            <connections>
+                                <action selector="updateList:" destination="1Z1-PM-fe6" id="8GS-ew-swt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="listPickerView" destination="XUy-IH-h5Y" id="NgE-Xz-pRr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d30-UM-F0N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2868.115942028986" y="2965.8482142857142"/>
         </scene>
-        <!--NYT Best Sellers List-->
+        <!--Best Sellers List-->
         <scene sceneID="3js-UT-P0P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AQr-e7-vma" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="NYT Best Sellers List" id="Loq-eT-YzV"/>
+                    <tabBarItem key="tabBarItem" title="Best Sellers List" id="Loq-eT-YzV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ua9-2x-h48">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
