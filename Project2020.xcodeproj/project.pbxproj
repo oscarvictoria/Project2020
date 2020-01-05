@@ -20,6 +20,8 @@
 		BE2D635623BBE5BC005967CC /* BooksAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D635523BBE5BC005967CC /* BooksAPIClient.swift */; };
 		BE2D635823BC05DF005967CC /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D635723BC05DF005967CC /* BookCell.swift */; };
 		BE2D635A23BC0892005967CC /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D635923BC0892005967CC /* UIImageView + Extension.swift */; };
+		BE3BDAE723C26CC900CD7537 /* BestSellersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3BDAE623C26CC900CD7537 /* BestSellersVC.swift */; };
+		BE3BDAE923C2726D00CD7537 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3BDAE823C2726D00CD7537 /* List.swift */; };
 		BE45D2EA23BFF2C5002256BB /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2E923BFF2C5002256BB /* CollectionViewController.swift */; };
 		BE45D2EC23BFF5EA002256BB /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */; };
 		BE45D2EE23C0595D002256BB /* Favorite Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2ED23C0595D002256BB /* Favorite Books.swift */; };
@@ -55,6 +57,8 @@
 		BE2D635523BBE5BC005967CC /* BooksAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksAPIClient.swift; sourceTree = "<group>"; };
 		BE2D635723BC05DF005967CC /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		BE2D635923BC0892005967CC /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		BE3BDAE623C26CC900CD7537 /* BestSellersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellersVC.swift; sourceTree = "<group>"; };
+		BE3BDAE823C2726D00CD7537 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		BE45D2E923BFF2C5002256BB /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BE45D2ED23C0595D002256BB /* Favorite Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite Books.swift"; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			children = (
 				BE2D635323BBE024005967CC /* Books.swift */,
 				BE45D2ED23C0595D002256BB /* Favorite Books.swift */,
+				BE3BDAE823C2726D00CD7537 /* List.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */,
 				BE8AD58623C10E88002C28F3 /* BookDVC.swift */,
 				BE8AD58823C17514002C28F3 /* FavoritesVC.swift */,
+				BE3BDAE623C26CC900CD7537 /* BestSellersVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,11 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2D635A23BC0892005967CC /* UIImageView + Extension.swift in Sources */,
+				BE3BDAE923C2726D00CD7537 /* List.swift in Sources */,
 				BE2D635423BBE024005967CC /* Books.swift in Sources */,
 				BE2D635023BBDB60005967CC /* NetworkHelper.swift in Sources */,
 				BE2D632F23BBD9D1005967CC /* ViewController.swift in Sources */,
 				BE8AD58923C17514002C28F3 /* FavoritesVC.swift in Sources */,
 				BE45D2EA23BFF2C5002256BB /* CollectionViewController.swift in Sources */,
+				BE3BDAE723C26CC900CD7537 /* BestSellersVC.swift in Sources */,
 				BE2D635223BBDC5A005967CC /* AppError.swift in Sources */,
 				BE2D635823BC05DF005967CC /* BookCell.swift in Sources */,
 				BE2D632B23BBD9D1005967CC /* AppDelegate.swift in Sources */,

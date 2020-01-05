@@ -97,4 +97,31 @@ struct BooksAPIClient {
             }
         
     }
+    
+    static func getList(completion: @escaping (Result <[BookData], AppError>)-> ()) {
+        
+    let endpointURLString = "https://api.nytimes.com/svc/books/v3/lists/current/Business-Books.json?api-key=YfFmebKIif8db1bZE3oj2IIepa7SFgPH"
+        
+        guard let url = URL(string: endpointURLString) else {
+            completion(.failure(.badURL(endpointURLString)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            switch result {
+            case .failure(let appError):
+                completion(.failure(.networkClientError(appError)))
+            case .success(let data):
+                do {
+                    let list = try JSONDecoder().decode(List.self, from: data)
+                    let bookData = list.results.books
+                    completion(.success(bookData))
+                } catch {
+                    completion(.failure(.decodingError(error)))
+                }
+            }
+        }
+    }
 }
