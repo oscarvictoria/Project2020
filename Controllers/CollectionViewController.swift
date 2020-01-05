@@ -53,9 +53,11 @@ extension CollectionViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? CollectionCell else {
             fatalError("error")
         }
+        
         let book = books[indexPath.row]
-        cell.title.text = book.volumeInfo.title ?? ""
-        cell.bookImage.getImage(with: book.volumeInfo.imageLinks?.thumbnail ?? "") { (result) in
+        let imageURL = "http://books.google.com/books/content?id=\(book.id)&printsec=frontcover&img=1"
+        cell.title.text = book.volumeInfo?.title ?? ""
+        cell.bookImage.getImage(with: imageURL) { (result) in
             switch result {
             case .failure(let error):
                 print("error \(error)")

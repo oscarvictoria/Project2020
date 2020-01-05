@@ -11,7 +11,7 @@ import Foundation
 struct favoriteBooks: Codable {
     let id: String
     let title: String
-    let author: String 
-//    let response: String
+    let authors: [String]
+//  let response: String
     let favoritedBy: String
 }

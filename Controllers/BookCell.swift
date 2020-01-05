@@ -15,9 +15,9 @@ class BookCell: UITableViewCell {
 @IBOutlet weak var bookAuthorLabel: UILabel!
     
     func configured(for book: Items) {
-        bookTitleLabel.text = book.volumeInfo.title ?? ""
-        bookAuthorLabel.text = book.volumeInfo.authors?.first
-        bookImageView.getImage(with: book.volumeInfo.imageLinks?.thumbnail ?? "") { (result) in
+        bookTitleLabel.text = book.volumeInfo?.title ?? ""
+        bookAuthorLabel.text = book.volumeInfo?.authors?.first
+        bookImageView.getImage(with: book.volumeInfo?.imageLinks?.thumbnail ?? "") { (result) in
             switch result {
             case .failure(let appError):
                 print("app error: \(appError)")

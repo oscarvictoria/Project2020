@@ -24,6 +24,7 @@
 		BE45D2EC23BFF5EA002256BB /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */; };
 		BE45D2EE23C0595D002256BB /* Favorite Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2ED23C0595D002256BB /* Favorite Books.swift */; };
 		BE8AD58723C10E88002C28F3 /* BookDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58623C10E88002C28F3 /* BookDVC.swift */; };
+		BE8AD58923C17514002C28F3 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58823C17514002C28F3 /* FavoritesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BE45D2ED23C0595D002256BB /* Favorite Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite Books.swift"; sourceTree = "<group>"; };
 		BE8AD58623C10E88002C28F3 /* BookDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDVC.swift; sourceTree = "<group>"; };
+		BE8AD58823C17514002C28F3 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				BE45D2E923BFF2C5002256BB /* CollectionViewController.swift */,
 				BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */,
 				BE8AD58623C10E88002C28F3 /* BookDVC.swift */,
+				BE8AD58823C17514002C28F3 /* FavoritesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				BE2D635423BBE024005967CC /* Books.swift in Sources */,
 				BE2D635023BBDB60005967CC /* NetworkHelper.swift in Sources */,
 				BE2D632F23BBD9D1005967CC /* ViewController.swift in Sources */,
+				BE8AD58923C17514002C28F3 /* FavoritesVC.swift in Sources */,
 				BE45D2EA23BFF2C5002256BB /* CollectionViewController.swift in Sources */,
 				BE2D635223BBDC5A005967CC /* AppError.swift in Sources */,
 				BE2D635823BC05DF005967CC /* BookCell.swift in Sources */,

@@ -13,7 +13,7 @@ struct Books: Codable {
 }
 
 struct Items: Codable {
-    let volumeInfo: volumeInfo
+    let volumeInfo: volumeInfo?
     let id: String
 }
 

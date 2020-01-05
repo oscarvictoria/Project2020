@@ -70,4 +70,31 @@ struct BooksAPIClient {
 
         
     }
+    
+    static func getFavorites(completion: @escaping (Result <[favoriteBooks], AppError>)-> ()) {
+        
+         let endpointURLString = "https://5e11123483440f0014d83035.mockapi.io/api/v1/favorites"
+        
+        guard let url = URL(string: endpointURLString) else {
+                completion(.failure(.badURL(endpointURLString)))
+                return
+            }
+            
+            let request = URLRequest(url: url)
+            
+            NetworkHelper.shared.performDataTask(with: request) { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("error \(appError)")
+                case .success(let data):
+                    do {
+                        let favorites = try JSONDecoder().decode([favoriteBooks].self, from: data)
+                        completion(.success(favorites))
+                    } catch {
+                        completion(.failure(.decodingError(error)))
+                    }
+                }
+            }
+        
+    }
 }

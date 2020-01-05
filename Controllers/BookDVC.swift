@@ -25,7 +25,7 @@ var detailBook: Items?
             fatalError("error")
         }
         
-        let imageURL = "http://books.google.com/books/content?id=\(someBooks.id)&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73PYneBrZYG6Jh4cHqstl7445LNstgHgnonbc86Xvhfbgp9xiJdJV3eI56nO7Dka-VtHUPGFdAx2266IqHDTtR5bIIkWtOx68sE-DlAFfoVXNisk77tR8oBsZfxSX0akanXoveX&source=gbs_api"
+        let imageURL = "http://books.google.com/books/content?id=\(someBooks.id)&printsec=frontcover&img=1"
         
         bookImageView.getImage(with: imageURL) { (result) in
             switch result {
@@ -50,7 +50,7 @@ var detailBook: Items?
             return
         }
         
-        let bookFavorites = volumeInfo(title: favorites.volumeInfo.title, authors: favorites.volumeInfo.authors, imageLinks: nil ,favoritedBy: "Oscar")
+        let bookFavorites = volumeInfo(title: favorites.volumeInfo?.title, authors: favorites.volumeInfo?.authors, imageLinks: nil ,favoritedBy: "Oscar")
      
         BooksAPIClient.postFavorites(book: bookFavorites) { (result) in
             switch result {
