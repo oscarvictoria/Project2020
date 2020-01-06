@@ -133,11 +133,11 @@
             </objects>
             <point key="canvasLocation" x="2844.9275362318845" y="126.5625"/>
         </scene>
-        <!--Table View-->
+        <!--Book-->
         <scene sceneID="DX4-Zg-k5B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpb-Hh-BR3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table View" id="riq-Xs-5TV"/>
+                    <tabBarItem key="tabBarItem" title="Book" image="book" catalog="system" id="riq-Xs-5TV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LQC-d2-JLm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -258,7 +258,7 @@
         <scene sceneID="aIl-D7-XoK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82k-TV-8hl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Author" id="fRl-hR-7qY"/>
+                    <tabBarItem key="tabBarItem" title="Author" image="person.fill" catalog="system" id="fRl-hR-7qY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gpb-oN-9E0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -318,7 +318,7 @@
         <scene sceneID="oqf-pv-tCu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0pf-GK-T9V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="5Wg-bb-ebU"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="bookmark" catalog="system" id="5Wg-bb-ebU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m1i-s3-SQE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -452,7 +452,7 @@
         <scene sceneID="pNP-5N-QxA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pGB-n5-RYT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Best Sellers " id="FBn-eF-jEd"/>
+                    <tabBarItem key="tabBarItem" title="Best Sellers " image="list.number" catalog="system" id="FBn-eF-jEd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oen-OY-5Ek">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -468,4 +468,10 @@
             <point key="canvasLocation" x="1047.8260869565217" y="2225.8928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" catalog="system" width="64" height="52"/>
+        <image name="bookmark" catalog="system" width="54" height="64"/>
+        <image name="list.number" catalog="system" width="64" height="50"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

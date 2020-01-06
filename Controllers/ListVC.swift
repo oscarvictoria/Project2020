@@ -25,6 +25,8 @@ class ListVC: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             tableView.dataSource = self
+            datePicker.backgroundColor = .systemYellow
+          
             
             loadList()
         }
@@ -40,6 +42,7 @@ class ListVC: UIViewController {
             }
           
         }
+  
     
     
     @IBAction func submit(_ sender: UIButton) {
@@ -55,12 +58,14 @@ class ListVC: UIViewController {
                 print("\(error)")
             case .success(let listData):
                 self.list = listData
+                print(dateString)
             }
         }
     }
     
-
-    }
+  
+    
+}
 
     extension ListVC: UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
