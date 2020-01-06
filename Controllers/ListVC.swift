@@ -12,7 +12,7 @@ class ListVC: UIViewController {
     
     
 @IBOutlet weak var tableView: UITableView!
-@IBOutlet weak var textField: UITextField!
+@IBOutlet weak var datePicker: UIDatePicker!
     
      var list = [BookData]() {
             didSet {
@@ -25,7 +25,7 @@ class ListVC: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             tableView.dataSource = self
-            textField.delegate = self
+            
             loadList()
         }
         
@@ -40,7 +40,25 @@ class ListVC: UIViewController {
             }
           
         }
-      
+    
+    
+    @IBAction func submit(_ sender: UIButton) {
+        let myDate = datePicker.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let date = myDate
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from:date)
+        BooksAPIClient.getList(list: title ?? "", date: dateString) { (result) in
+            switch result {
+            case .failure(let error):
+                print("\(error)")
+            case .success(let listData):
+                self.list = listData
+            }
+        }
+    }
+    
 
     }
 
@@ -58,16 +76,4 @@ class ListVC: UIViewController {
 
 }
 
-extension ListVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        BooksAPIClient.getList(list: title ?? "", date: textField.text ?? "") { (result) in
-            switch result {
-            case .failure(let error):
-                print("\(error)")
-            case .success(let listData):
-                self.list = listData
-            }
-        }
-        return true
-    }
-}
+
