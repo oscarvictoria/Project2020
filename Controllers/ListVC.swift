@@ -12,8 +12,7 @@ class ListVC: UIViewController {
     
     
 @IBOutlet weak var tableView: UITableView!
-    
-  
+@IBOutlet weak var textField: UITextField!
     
      var list = [BookData]() {
             didSet {
@@ -26,19 +25,20 @@ class ListVC: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             tableView.dataSource = self
+            textField.delegate = self
             loadList()
         }
         
         func loadList() {
-
-            BooksAPIClient.getList(list: title ?? "") { (result) in
+            BooksAPIClient.getList(list: title ?? "", date: "current") { (result) in
                 switch result {
                 case .failure(let error):
                     print("\(error)")
-                case .success(let list):
-                    self.list = list
+                case .success(let listData):
+                    self.list = listData
                 }
             }
+          
         }
       
 
@@ -56,4 +56,18 @@ class ListVC: UIViewController {
             return cell
         }
 
+}
+
+extension ListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        BooksAPIClient.getList(list: title ?? "", date: textField.text ?? "") { (result) in
+            switch result {
+            case .failure(let error):
+                print("\(error)")
+            case .success(let listData):
+                self.list = listData
+            }
+        }
+        return true
+    }
 }

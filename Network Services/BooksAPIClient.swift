@@ -98,11 +98,13 @@ struct BooksAPIClient {
         
     }
     
-    static func getList(list: String, completion: @escaping (Result <[BookData], AppError>)-> ()) {
+    static func getList(list: String, date: String, completion: @escaping (Result <[BookData], AppError>)-> ()) {
+    
+    let date = date.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "book"
         
     let list = list.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "book"
         
-    let endpointURLString = "https://api.nytimes.com/svc/books/v3/lists/current/\(list).json?api-key=YfFmebKIif8db1bZE3oj2IIepa7SFgPH"
+    let endpointURLString = "https://api.nytimes.com/svc/books/v3/lists/\(date)/\(list).json?api-key=YfFmebKIif8db1bZE3oj2IIepa7SFgPH"
         
         guard let url = URL(string: endpointURLString) else {
             completion(.failure(.badURL(endpointURLString)))
