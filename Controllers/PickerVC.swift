@@ -1,5 +1,5 @@
 //
-//  UpdateListVC.swift
+//  PickerVC.swift
 //  Project2020
 //
 //  Created by Oscar Victoria Gonzalez  on 1/5/20.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class UpdateListVC: UIViewController {
+class PickerVC: UIViewController {
     
-@IBOutlet weak var listPickerView: UIPickerView!
+    
+    @IBOutlet weak var listPickerView: UIPickerView!
+    
     
     private let list = ["Combined Print and E-Book Nonfiction", "Hardcover Fiction", "Hardcover Nonfiction", "Trade Fiction Paperback", "Mass Market Paperback", "Paperback Nonfiction", "E-Book Fiction", "E-Book Nonfiction",  "Hardcover Advice", "Paperback Advice","Advice How-To and Miscellaneous", "Hardcover Graphic Books", "Paperback Graphic Books","Manga", "Combined Print Fiction", "Combined Print Nonfiction", "Chapter Books", "Childrens Middle Grade", "Paperback Books", "Business Books", "Education", "Science", "Sports", "Travel"].sorted()
     
@@ -20,38 +22,32 @@ class UpdateListVC: UIViewController {
         super.viewDidLoad()
         listPickerView.dataSource = self
         listPickerView.delegate = self
-
+        
         listName = list.first
     }
     
-
-  
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
     
-    
-    @IBAction func updateList(_ sender: UIBarButtonItem) {
-        guard let listName = listName else {
-            return
-        }
-        
-        BooksAPIClient.getList(list: listName) { (result) in
-            switch result {
-            case .failure(let error):
-                print("\(error)")
-            case .success:
-                print("success")
-                
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "customSegue" {
+            guard let listVC = segue.destination as? ListVC else {
+                fatalError("error")
             }
+            listVC.title = self.listName
         }
     }
     
     
+    
+    
+    
+    @IBAction func submit(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "customSegue", sender: nil)
+        
+    }
     
 }
 
-extension UpdateListVC: UIPickerViewDataSource {
+extension PickerVC: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -60,12 +56,21 @@ extension UpdateListVC: UIPickerViewDataSource {
         list.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        listName = list[row]
+    }
+    
+    
+    
     
     
 }
 
-extension UpdateListVC: UIPickerViewDelegate {
+extension PickerVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return list[row]
     }
 }
+
+
+
