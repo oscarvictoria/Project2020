@@ -11,6 +11,11 @@ let name = "Oscar"
 }
 ```
 
-## screenshot of the app
+## Screenshot
 
-![HomeScreen](Assets/HomeScreen1)
+![HomeScreen](Assets/HomeScreen1.png)
+
+##  GIF
+
+
+![HomeScreen](Assets/BooksProject.gif)
