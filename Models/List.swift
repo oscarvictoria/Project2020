@@ -20,4 +20,5 @@ struct BookData: Codable {
     let rank: Int
     let title: String
     let author: String
+    let primary_isbn13: String
 }

@@ -10,24 +10,23 @@ import UIKit
 
 class ListVC: UIViewController {
     
-    
-@IBOutlet weak var tableView: UITableView!
+@IBOutlet weak var collectionView: UICollectionView!
 @IBOutlet weak var datePicker: UIDatePicker!
     
-     var list = [BookData]() {
-            didSet {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+     
+    var list = [BookData]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
+    }
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            tableView.dataSource = self
-            datePicker.backgroundColor = .systemYellow
-          
-            
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            datePicker.backgroundColor = .systemGray6
             loadList()
         }
         
@@ -40,7 +39,7 @@ class ListVC: UIViewController {
                     self.list = listData
                 }
             }
-          
+
         }
   
     
@@ -67,18 +66,35 @@ class ListVC: UIViewController {
     
 }
 
-    extension ListVC: UITableViewDataSource {
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return list.count
+extension ListVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as? ListCell else {
+            fatalError("cannot get cell")
+        }
+        let lists = list[indexPath.row]
+        let imageURL = "https://s1.nyt.com/du/books/images/\(lists.primary_isbn13).jpg"
+        cell.titleLabel.text = lists.title
+        cell.imageView.getImage(with: imageURL) { (result) in
+            switch result {
+            case .failure(let error):
+                print("\(error)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    cell.imageView.image = image
+                }
+            }
         }
         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell", for: indexPath)
-            let listData = list[indexPath.row]
-            cell.textLabel?.text = listData.title
-            return cell
-        }
-
+        return cell
+    }
 }
 
-
+extension ListVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           return CGSize(width: 400, height: 630)
+       }
+}
