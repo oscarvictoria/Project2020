@@ -13,4 +13,4 @@ let name = "Oscar"
 
 ## screenshot of the app
 
-![Homescreesn](Assets/)
+![HomeScreen](Assets/HomeScreen1)
