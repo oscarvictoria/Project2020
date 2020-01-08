@@ -27,7 +27,6 @@
 		BE45D2EC23BFF5EA002256BB /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */; };
 		BE45D2EE23C0595D002256BB /* Favorite Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2ED23C0595D002256BB /* Favorite Books.swift */; };
 		BE4763EB23C5188A00DC89C8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4763EA23C5188A00DC89C8 /* ListCell.swift */; };
-		BE4763FA23C676F300DC89C8 /* Notes1 in Resources */ = {isa = PBXBuildFile; fileRef = BE4763F923C676F300DC89C8 /* Notes1 */; };
 		BE8AD58723C10E88002C28F3 /* BookDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58623C10E88002C28F3 /* BookDVC.swift */; };
 		BE8AD58923C17514002C28F3 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58823C17514002C28F3 /* FavoritesVC.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +66,6 @@
 		BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BE45D2ED23C0595D002256BB /* Favorite Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite Books.swift"; sourceTree = "<group>"; };
 		BE4763EA23C5188A00DC89C8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		BE4763F923C676F300DC89C8 /* Notes1 */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes1; sourceTree = "<group>"; };
 		BE8AD58623C10E88002C28F3 /* BookDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDVC.swift; sourceTree = "<group>"; };
 		BE8AD58823C17514002C28F3 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +91,6 @@
 		BE2D631E23BBD9D1005967CC = {
 			isa = PBXGroup;
 			children = (
-				BE4763F823C676D100DC89C8 /* Notes */,
 				BE2D634E23BBDA7D005967CC /* Controllers */,
 				BE2D634D23BBDA18005967CC /* Models */,
 				BE2D634C23BBD9F7005967CC /* Network Services */,
@@ -169,14 +166,6 @@
 				BE3BDAEE23C2A7D400CD7537 /* ListVC.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		BE4763F823C676D100DC89C8 /* Notes */ = {
-			isa = PBXGroup;
-			children = (
-				BE4763F923C676F300DC89C8 /* Notes1 */,
-			);
-			path = Notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE4763FA23C676F300DC89C8 /* Notes1 in Resources */,
 				BE2D633723BBD9D4005967CC /* LaunchScreen.storyboard in Resources */,
 				BE2D633423BBD9D4005967CC /* Assets.xcassets in Resources */,
 				BE2D633223BBD9D1005967CC /* Main.storyboard in Resources */,
