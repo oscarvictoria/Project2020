@@ -13,7 +13,7 @@ let name = "Oscar"
 
 ## Screenshot
 
-![HomeScreen](Assets/HomeScreen1.png)
+![HomeScreen](Assets/HomeScreen2.png)
 
 ##  GIF
 
