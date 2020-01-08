@@ -78,7 +78,7 @@ extension ListVC: UICollectionViewDataSource {
         let lists = list[indexPath.row]
         let imageURL = "https://s1.nyt.com/du/books/images/\(lists.primary_isbn13).jpg"
         cell.titleLabel.text = lists.title
-        cell.rannkLabel.text = lists.rank.description
+//        cell.rannkLabel.text = lists.rank.description
         cell.imageView.getImage(with: imageURL) { (result) in
             switch result {
             case .failure(let error):

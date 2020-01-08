@@ -12,5 +12,5 @@ class ListCell: UICollectionViewCell {
     
 @IBOutlet weak var titleLabel: UILabel!
 @IBOutlet weak var imageView: UIImageView!
-@IBOutlet weak var rannkLabel: UILabel!
+
 }
