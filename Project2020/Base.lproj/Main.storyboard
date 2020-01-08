@@ -388,22 +388,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-fc-Ucy">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-fc-Ucy">
                                 <rect key="frame" x="100" y="750" width="214" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ltK-HP-Wdf"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submit:" destination="cfb-yw-Tc8" eventType="touchUpInside" id="bck-YT-Lum"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WVm-xw-Gqo">
-                                <rect key="frame" x="0.0" y="125" width="414" height="310"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WVm-xw-Gqo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="428"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="310" id="T4z-TY-aHd"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GKn-x1-ZWl">
                                     <size key="itemSize" width="412" height="315"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -412,7 +408,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="listCell" id="wxD-cy-gkK" customClass="ListCell" customModule="Project2020" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-2.5" width="412" height="315"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="412" height="315"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8xQ-71-TxA">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="315"/>
@@ -429,34 +425,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWC-dD-7HV">
+                                                    <rect key="frame" x="158" y="8" width="119" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="412" height="315"/>
                                         <connections>
                                             <outlet property="imageView" destination="ZMO-g9-Iit" id="237-p7-bvr"/>
+                                            <outlet property="rannkLabel" destination="yWC-dD-7HV" id="Vil-7h-m91"/>
                                             <outlet property="titleLabel" destination="FBD-XS-urw" id="pDI-h9-K5p"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="x5R-z1-FNS">
-                                <rect key="frame" x="0.0" y="435" width="414" height="275"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="275" id="RRX-Wn-tpd"/>
-                                </constraints>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="x5R-z1-FNS">
+                                <rect key="frame" x="0.0" y="524" width="414" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="PYW-AU-B9n" firstAttribute="trailing" secondItem="I3p-fc-Ucy" secondAttribute="trailing" constant="100" id="I2D-DF-8gH"/>
-                            <constraint firstItem="x5R-z1-FNS" firstAttribute="top" secondItem="WVm-xw-Gqo" secondAttribute="bottom" id="Luh-Bp-eAR"/>
-                            <constraint firstItem="WVm-xw-Gqo" firstAttribute="trailing" secondItem="PYW-AU-B9n" secondAttribute="trailing" id="PNi-qR-yfh"/>
-                            <constraint firstItem="I3p-fc-Ucy" firstAttribute="top" secondItem="x5R-z1-FNS" secondAttribute="bottom" constant="40" id="Pfw-Wc-kbD"/>
-                            <constraint firstItem="WVm-xw-Gqo" firstAttribute="leading" secondItem="PYW-AU-B9n" secondAttribute="leading" id="bXc-3k-Meq"/>
-                            <constraint firstItem="x5R-z1-FNS" firstAttribute="trailing" secondItem="PYW-AU-B9n" secondAttribute="trailing" id="gXh-p5-wkR"/>
-                            <constraint firstItem="x5R-z1-FNS" firstAttribute="leading" secondItem="PYW-AU-B9n" secondAttribute="leading" id="mvw-Ri-SK0"/>
-                            <constraint firstItem="I3p-fc-Ucy" firstAttribute="leading" secondItem="PYW-AU-B9n" secondAttribute="leading" constant="100" id="qri-7F-Sm2"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PYW-AU-B9n"/>
                     </view>
                     <navigationItem key="navigationItem" id="t7K-3m-aUw"/>

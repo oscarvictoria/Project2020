@@ -55,8 +55,9 @@ extension CollectionViewController: UICollectionViewDataSource {
         }
         
         let book = books[indexPath.row]
-        let imageURL = "http://books.google.com/books/content?id=\(book.id)&printsec=frontcover&img=1"
+        let imageURL = "http://books.google.com/books/content?id=\(book.id)&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE710CSJSqWFZNoJSuGEuoEar36sa7fwTZWbPvDTK_pn7F39fEj6C3HTBp4huTZTzivqPkCkqKXrqhf8gELHuWqcokJAcWIhFcngxy0qOuy7EUpfloDvLOz_a8DYIKeInhRmHyiaI&source=gbs_api"
         cell.title.text = book.volumeInfo?.title ?? ""
+        cell.author.text = book.volumeInfo?.authors?.first ?? ""
         cell.bookImage.getImage(with: imageURL) { (result) in
             switch result {
             case .failure(let error):
