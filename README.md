@@ -4,12 +4,6 @@
 
 The app allows you to search for your favorite books and save them to a favorite's tab. The app also allows you to search the best sellers list from the New York Times.
 
-```swift
-func test() {
-// code here
-let name = "Oscar"
-}
-```
 
 ## Screenshot
 
