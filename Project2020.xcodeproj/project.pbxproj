@@ -27,6 +27,7 @@
 		BE45D2EC23BFF5EA002256BB /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */; };
 		BE45D2EE23C0595D002256BB /* Favorite Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45D2ED23C0595D002256BB /* Favorite Books.swift */; };
 		BE4763EB23C5188A00DC89C8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4763EA23C5188A00DC89C8 /* ListCell.swift */; };
+		BE4763FD23C678FE00DC89C8 /* Project Notes in Resources */ = {isa = PBXBuildFile; fileRef = BE4763FC23C678FE00DC89C8 /* Project Notes */; };
 		BE8AD58723C10E88002C28F3 /* BookDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58623C10E88002C28F3 /* BookDVC.swift */; };
 		BE8AD58923C17514002C28F3 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8AD58823C17514002C28F3 /* FavoritesVC.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		BE45D2EB23BFF5EA002256BB /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BE45D2ED23C0595D002256BB /* Favorite Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite Books.swift"; sourceTree = "<group>"; };
 		BE4763EA23C5188A00DC89C8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		BE4763FC23C678FE00DC89C8 /* Project Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Project Notes"; sourceTree = "<group>"; };
 		BE8AD58623C10E88002C28F3 /* BookDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDVC.swift; sourceTree = "<group>"; };
 		BE8AD58823C17514002C28F3 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +174,7 @@
 		BE4763FB23C6789500DC89C8 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				BE4763FC23C678FE00DC89C8 /* Project Notes */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2D633723BBD9D4005967CC /* LaunchScreen.storyboard in Resources */,
+				BE4763FD23C678FE00DC89C8 /* Project Notes in Resources */,
 				BE2D633423BBD9D4005967CC /* Assets.xcassets in Resources */,
 				BE2D633223BBD9D1005967CC /* Main.storyboard in Resources */,
 			);
