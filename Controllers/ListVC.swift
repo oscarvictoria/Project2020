@@ -26,7 +26,7 @@ class ListVC: UIViewController {
             super.viewDidLoad()
             collectionView.dataSource = self
             collectionView.delegate = self
-            datePicker.backgroundColor = .systemGray6
+            datePicker.backgroundColor = .systemYellow
             loadList()
         }
         
